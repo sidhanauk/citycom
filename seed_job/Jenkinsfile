@@ -20,6 +20,7 @@ for(i = 1; i <= numberOfJobs; i++){
   
     //change here
     job(jobPath) {
+      label(!master)
       //steps 
       publishers {
         downstreamParameterized {
