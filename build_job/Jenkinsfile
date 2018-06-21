@@ -321,11 +321,11 @@ job("05.TriggerSeedJob") {
         downstreamParameterized {
           trigger('JobsSeed') {
             
-            block {
-              buildStepFailure('FAILURE')
-              failure('FAILURE')
-              unstable('UNSTABLE')
-            }
+//            block {
+//              buildStepFailure('FAILURE')
+//              failure('FAILURE')
+//              unstable('UNSTABLE')
+//            }
             
             parameters {
                 currentBuild()
