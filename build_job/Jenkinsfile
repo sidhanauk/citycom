@@ -2,6 +2,6 @@ node
 {
 	stage ('setup')
 	{
-		load("citycom/build_job/build.groovy").manage()
+		load("build.groovy").manage()
 	}
 }
