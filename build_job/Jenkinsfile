@@ -1,6 +1,6 @@
 node
 {
-        scm checkout
+        checkout scm
 
 	stage ('setup')
 	{
