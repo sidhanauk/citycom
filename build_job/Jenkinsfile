@@ -2,6 +2,7 @@ node
 {
 	stage ('setup')
 	{
-		load("./build.groovy").manage()
+                sh 'ls -ltr'
+		//load("./build.groovy").manage()
 	}
 }
