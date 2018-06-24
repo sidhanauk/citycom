@@ -5,6 +5,6 @@ node
 	stage ('setup')
 	{
                 sh 'ls -ltr'
-		//load("./build.groovy").manage()
+		load("./build.groovy").manage()
 	}
 }
