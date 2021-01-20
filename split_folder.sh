@@ -11,7 +11,8 @@ number_of_folders=2
 
 second_folder_name=${source}_$(date +%Y%m%d%H%M%S)
 
-cp -rf ${source} ${second_folder_name}
+#cp -rf ${source} ${second_folder_name}
+aws s3 cp s3://source-awsexamplebucket/${source} s3://destination-awsexamplebucket/${second_folder_name} --recursive
 
 #i=0
 
