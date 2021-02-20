@@ -1,0 +1,15 @@
+echo ${AUDIO_FILES_DESTINATION_DIRECTORY_CSV}
+echo ${PARENT_BUILD_NUMBER}
+echo ${PARENT_JOB_NAME}
+
+JENKINS_URL="http://10.1.2.87:8080"
+
+folderName=$(echo $PARENT_JOB_NAME|awk -F/ '{print $1}')
+jobName=$(echo $PARENT_JOB_NAME|awk -F/ '{print $2}')
+filePath="$JENKINS_URL/job/$folderName/job/$jobName/${PARENT_BUILD_NUMBER}/artifact/Jenkins_${jobName}_${PARENT_BUILD_NUMBER}_results.csv"
+
+echo $filePath
+
+curl -u $USER:$PASSWORD -o "Jenkins_${jobName}_${PARENT_BUILD_NUMBER}_results.csv" ${filePath}
+
+cp -p  "Jenkins_${jobName}_${PARENT_BUILD_NUMBER}_results.csv"  ${AUDIO_FILES_DESTINATION_DIRECTORY_CSV}/
